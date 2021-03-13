@@ -1,0 +1,88 @@
+
+.header {
+   
+    height:95vh; 
+    background-image:linear-gradient(to right bottom,rgba(126,213,111,0.8),rgba(40,180,131,0.8)),
+    url(https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size:cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+    text-align: center;
+}
+
+.bttn:link,
+.bttn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 3.5rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    color: #777;
+    font-size: 1.5rem;
+    top: 2rem;
+    font-size: 1rem;
+    top:15rem;
+}
+
+.bttn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    color: #777;
+}
+
+.bttn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    color: #777;
+}
+
+.bttn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.bttn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    color: #777;
+}
+
+.bttn-white::after {
+    background-color: #fff;
+    color: #777;
+}
+
+.bttn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+    color: #777;
+}
+
+.bttn-animated {
+    animation: moveInBottom 0.5s ease-out 0.75;
+    animation-fill-mode: backwards;
+    color: #777;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
