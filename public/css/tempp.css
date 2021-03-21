@@ -1,0 +1,212 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #7a7a7a;
+    line-height: 30px;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+}
+
+.blog-posts {
+    margin-top: 40px;
+}
+
+.blog-posts .blog-post {
+    margin-bottom: 30px;
+}
+
+.blog-posts nav {
+    margin-bottom: 20px;
+    padding: 0;
+    /* display: flex;
+    justify-content: space-around; */
+}
+
+.blog-posts nav h2 {
+    color: rgba(104, 179, 152, 0.8);
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.blogs-section {
+    border-right: 1px solid gainsboro;
+}
+
+.blog-posts .blog-thumb img {
+    width: 35%;
+    height: 45%;
+    margin-right: 20px;
+    float: left;
+    overflow: hidden;
+}
+
+.blog-posts .blog-post .headline {
+    clear: both;
+    max-height: 35%;
+    overflow: hidden;
+}
+
+.blog-posts .blog-post .headline span a {
+    font-size: 0.75rem;
+    display: block;
+    text-align: right;
+    color: darkslategray;
+    text-decoration: none;
+}
+
+.blog-posts .blog-post .headline a:hover {
+    color: black;
+}
+
+.blog-posts .blog-post .headline b {
+    width: 100%;
+    font-weight: 750;
+    line-height: 75%;
+}
+
+.blog-posts .blog-post .down-content {
+    clear: both;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.blog-posts .blog-post .down-content ul.post-info {
+    margin-bottom: 4px;
+    padding-left: 5px;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li {
+    display: inline-block;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li:after {
+    content: '|';
+    color: #aaa;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li:last-child::after {
+    display: none;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li a {
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 400;
+    transition: all .2s;
+    text-decoration: none;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li a:hover {
+    color: black;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags {
+    padding: 0;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags li {
+    display: inline-block;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags li:first-child i {
+    color: yellowgreen;
+    margin-left: 3px;
+    margin-right: 5px;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags li a {
+    color: lightseagreen;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags li a:hover {
+    color: black;
+}
+
+.trending-section {
+    /* background-color: light */
+    background-image: linear-gradient(to right, rgba(240, 252, 238, 0.938), rgb(246, 248, 247));
+    border-radius: 10px;
+}
+
+.sidebar .trending-posts .sidebar-heading h2 {
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.sidebar {
+    padding: 15px;
+}
+
+.sidebar .trending-posts .content ul li {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(238, 236, 236);
+    list-style-type: none;
+}
+
+.sidebar .trending-posts .content ul li a {
+    text-decoration: none;
+}
+
+.sidebar .trending-posts .content ul li:last-child {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
+.sidebar .trending-posts .content ul li h5 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #20232e;
+    line-height: 30px;
+    transition: all 0.3s;
+}
+
+.sidebar .trending-posts .content ul li h5:hover {
+    background-image: linear-gradient(to right, rgba(89, 143, 81, 0.8), rgba(104, 179, 152, 0.8));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.sidebar .trending-posts ul li a span {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+.sidebar .trending-posts ul li span a {
+    font-size: 14px;
+    color: lightseagreen;
+    float: right;
+}
