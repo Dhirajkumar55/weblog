@@ -1,0 +1,17 @@
+.divcolrow{
+  text-align: left;
+  list-style-type:none;
+}
+.maincol{
+  border: 1px solid rgba(0, 0, 0,0.05);
+  margin: 2px;
+  padding: 5px;
+  background-clip: padding-box;
+}
+#yesno{
+  margin-right: 50px;
+}
+#propic{
+  height: 200px;
+  width: 200px;
+}

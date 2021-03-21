@@ -86,3 +86,104 @@
         transform: translateY(0rem);
     }
 }
+.blog-posts {
+    margin-top: 100px;
+}
+
+.blog-posts .blog-post {
+    margin-bottom: 30px;
+}
+
+.blog-posts .blog-thumb img {
+    width: 35%;
+    height: 45%;
+    margin-right: 5px;
+    float: left;
+    overflow: hidden;
+}
+
+.blog-posts .blog-post .headline {
+    clear: both;
+    max-height: 35%;
+    overflow: hidden;
+}
+
+.blog-posts .blog-post .headline span a {
+    font-size: 0.75rem;
+    display: block;
+    text-align: right;
+    color: darkslategray;
+    text-decoration: none;
+}
+
+.blog-posts .blog-post .headline a:hover {
+    color: black;
+}
+
+.blog-posts .blog-post .headline b {
+    width: 100%;
+    letter-spacing: -0.5px;
+    font-weight: 750;
+    line-height: 75%;
+}
+
+.blog-posts .blog-post .down-content {
+    clear: both;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.blog-posts .blog-post .down-content ul.post-info {
+    margin-bottom: 4px;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li {
+    display: inline-block;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li:after {
+    content: '|';
+    color: #aaa;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li:last-child::after {
+    display: none;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li a {
+    font-size: 10px;
+    color: #aaa;
+    font-weight: 400;
+    transition: all .3s;
+    text-decoration: none;
+}
+
+.blog-posts .blog-post .down-content ul.post-info li a:hover {
+    color: black;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags {
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags li {
+    display: inline-block;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags li:first-child i {
+    color: #f48840;
+    margin-left: 3px;
+    margin-right: 5px;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags li a {
+    color: lightseagreen;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.blog-posts .blog-post .down-content ul.post-tags li a:hover {
+    color: black;
+}
