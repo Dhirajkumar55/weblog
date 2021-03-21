@@ -52,7 +52,7 @@ app.get('/menu/login', (req, res) => {
 })
 
 app.get('/blogs', (req, res) => {
-    res.render('home', { blogs });
+    res.render('discoverBlogs', { blogs });
 })
 
 app.get('/blogs/new', (req, res) => {
