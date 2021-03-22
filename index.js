@@ -59,10 +59,6 @@ app.get('/blogs/new', (req, res) => {
     res.render('newBlog');
 })
 
-app.get('/modal',(req,res)=>{
-    res.render('modal');
-})
-
 app.post('/blogs', (req, res) => {
     const { username, blogtext: blog, duration: dur, title } = req.body;
     blogs.push({ username, blog, dur, title, id: uuid() });
