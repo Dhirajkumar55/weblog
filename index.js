@@ -52,11 +52,15 @@ app.get('/menu/login', (req, res) => {
 })
 
 app.get('/blogs', (req, res) => {
-    res.render('discoverBlogs', { blogs });
+    res.render('home', { blogs });
 })
 
 app.get('/blogs/new', (req, res) => {
     res.render('newBlog');
+})
+
+app.get('/modal',(req,res)=>{
+    res.render('modal');
 })
 
 app.post('/blogs', (req, res) => {
