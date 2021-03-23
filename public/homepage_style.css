@@ -106,7 +106,7 @@ h1{
     }
 }
 
-
+.bttn,
 .bttn:link,
 .bttn:visited {
     text-transform: uppercase;
@@ -114,10 +114,14 @@ h1{
     padding: 1.5rem 4rem;
     display: inline-block;
     border-radius: 10rem;
-    transition: all .2s;
+    transition: all .5s;
     position: relative;
     color: #777;
     font-size: 1.5rem;
+
+    /* change for the <button> element in newsletter section */
+    border: none;
+    cursor: pointer;
 }
 
 .bttn:hover {
@@ -137,6 +141,11 @@ h1{
     color: #777;
 }
 
+.bttn-green{
+  background-color: #55c57a;
+  color: #fff;
+}
+
 .bttn::after {
     content: "";
     display: inline-block;
@@ -154,6 +163,11 @@ h1{
 .bttn-white::after {
     background-color: #fff;
     color: #777;
+}
+
+.bttn-green::after {
+  background-color: #55c57a;
+  color: #fff;
 }
 
 .bttn:hover::after {
@@ -313,8 +327,6 @@ h1{
   padding: 17.5rem 0rem;
   background-position: center;
   margin-top: -25vh;
-  
-
 }
 
 .heading-secondary{
@@ -329,7 +341,6 @@ h1{
   color: transparent;
   margin:0 auto 0 auto;
   transition: all 0.5s;
-
 }
 
 section{
@@ -338,48 +349,222 @@ section{
 
 .heading-secondary:hover{
   transform: scale(1.25);
-  text-shadow: .5rem 1rem 2rem rgba(#000, 0.2)
+  text-shadow: .5rem 1rem 2rem rgba(#000, 0.2);
 }
 
 
+/* Css related to Categories Section */
 
 .section-categories{
-  padding: 20rem 0;
+  padding: 12.5rem 0;
   background-image:linear-gradient(to right bottom,rgba(126,213,111,0.8),rgba(40,180,131,0.8)),
     url(https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
   background-position: center;
   background-size: cover;
   position: relative;
   height:auto;
+  transform: skewY(-7deg);
+  margin-top: -9rem;
 }
 
+.section-categories > *{
+  transform: skewY(7deg);
+}
+
+.section-categories__heading{
+  margin-bottom:5rem;
+  text-align: center;
+}
+
+.section-categories__heading-primary{
+  display: inline-block;
+  color: rgb(255, 255, 255) ;
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+
+.section-categories__a{
+  text-decoration: none;
+  display: block;
+}
+
+
+
 .categories-box{
-  background-color: rgba(255, 255, 255, 0.6) ;
+  background-color: rgba(255, 255, 255, 0.8) ;
   font-size: 1.5rem;
   padding:2.5rem;
   text-align: center;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem  rgba(0, 0, 0, 0.15);
   position: relative;
+  transition: all 0.3s;
+}
+
+.categories-box:hover{
+  transform: translateY(-1.5rem) scale(1.03);
+  box-shadow: .5rem 1rem 2rem rgba(#000, 0.2);
+}
+
+.categories-box:active{
+  transform: translateY(-1rem);
 }
 
 .categories-box__icon{
-
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  background-image: linear-gradient(to right,rgba(126,213,111,0.8),rgba(40,180,131,0.8));
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-.categories-box__text{
-
-}
 
 .heading-tertiary{
-  color:white;
+  color:#777;
+  font-size: 2rem;
+}
+
+/* CSS related to section of Subscribe to Newsletter*/
+
+.section-newsletter{
+  padding:15rem;
+  background-image: linear-gradient(to right bottom,rgba(126,213,111,0.8),rgba(40,180,131,0.9));
+}
+
+.subscribe{
+  background-image: linear-gradient(105deg, 
+  rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 55%, transparent 55%),url(https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: 100%;
+  height:auto;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  width: auto;
+}
+
+.subscribe-heading{
+  font-size: 4rem;
+  background-image: linear-gradient(to right,#7ed56f,#28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subscribe__form{
+  padding: 5rem;
+}
+
+.form{
+  display: block;
+}
+
+.form__input{
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width:40%;
+  display: block;
+}
+
+.form__input:focus{
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid rgba(40,180,131);
+}
+
+.form__input:focus:invalid{
+  border-bottom: 3px solid orangered;
+}
+
+.form__input::-webkit-input-placeholder{
+  color: #999;
+}
+
+.form__label{
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-left: 2rem;
+  margin-top:0.7rem;
+  display: block;
+  transition: all 0.3s;
+  color:rgb(134, 134, 134);
+}
+
+.form__input:placeholder-shown + .form__label{
+  opacity:0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.form__group:not(:last-child){
+  margin-bottom: 2rem;
+
+}
+
+.subscribe__btn,
+.subscribe__btn:link,
+.subscribe__btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .5s;
+    position: relative;
+    color: #fff;
+    font-size: 1.5rem;
+
+    /* change for the <button> element in newsletter section */
+    border: none;
+    cursor: pointer;
+}
+
+.subscribe__btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.subscribe__btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    color: #fff;
 }
 
 
+.subscribe__btn-green{
+  background-color: #55c57a;
+  color: #fff;
+}
+
+.subscribe__btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    color: #fff;
+}
 
 
+.subscribe__btn-green::after {
+  background-color: #55c57a;
+  color: #fff;
+}
 
-
+.subscribe__btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+    color: #fff;
+}
 
 
 
@@ -404,7 +589,7 @@ section{
   font-weight: 600;
   letter-spacing: 0.25rem;
   position: relative;
-  background-image: linear-gradient(to right,rgba(126,213,111,0.8),rgba(40,180,131,0.8));
+  background-image: linear-gradient(to right,rgba(40,180,131,0.8) ,rgba(126,213,111,0.8));
   -webkit-background-clip: text;
   color: transparent;
   margin:0 auto 0 auto;
@@ -458,7 +643,6 @@ section{
 }
 
 .container_heading{
- 
   font-size: 1.125rem;
   text-transform: uppercase;
   font-weight: 700;

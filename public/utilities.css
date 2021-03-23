@@ -1,9 +1,28 @@
+html{
+    font-size: 62.5%;
+}
+
+
+
 .u-center-text{
     text-align: center;
 }
 
 .u-marign-top{
-    margin-bottom:20rem;
+    top:40rem;
+}
+
+.u-top{
+    top:1rem;
+           
+}
+
+.u-padding-5{
+    padding:5rem;
+}
+
+.u-margin-bottom-med{
+    margin-bottom: 4rem;
 }
 
 
