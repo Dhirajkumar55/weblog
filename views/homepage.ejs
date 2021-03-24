@@ -7,7 +7,7 @@
     <title>weBlog</title>
     <link rel="stylesheet" href="homepage_style.css">
     <link rel="stylesheet" href="utilities.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="icon-font.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   </head>
@@ -26,7 +26,7 @@
         <nav class="navigation__nav">
           <ul class="navigation__list">
             <li class="navigation__item"><a href="/menu/login" class="navigation__link"><span></span>Login/SignUp</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link"><span></span>Categories</a></li>
+            <li class="navigation__item"><a href="#categories" class="navigation__link"><span></span>Categories</a></li>
             <li class="navigation__item"><a href="#" class="navigation__link"><span></span>Hall of Fame</a></li>
             <li class="navigation__item"><a href="#" class="navigation__link"><span></span>Weekly performers</a></li>
             <li class="navigation__item"><a href="#" class="navigation__link"><span></span>Book now</a></li>
@@ -55,7 +55,7 @@
     </section>
 
     
-    <section class="section-categories">
+    <section class="section-categories" id="categories">
       <div class="section-categories__heading">
         <h2 class="section-categories__heading-primary">Categories</h2>
       </div>
@@ -152,6 +152,15 @@
             </a> 
           </div>
 
+          <!-- <div class="col">
+            <a href="#" class="section-categories__a">
+              <div class="categories-box">
+                <i class="icon-mail-read categories-box__icon"></i>
+                <h2 class="heading-tertiary">Health</h2>
+              </div>
+            </a> 
+          </div> -->
+
         </div>
       </div>  
     </section>
@@ -164,7 +173,7 @@
     </section>
 
 
-    <section class="section-newsletter">
+    <section class="section-newsletter" id="section-newsletter">
       <div class="row">
         <div class="subscribe">
           <div class="subscribe__form">
@@ -185,7 +194,7 @@
               </div>
 
               <div class="form__group">
-                <button class=" subscribe__btn subscribe__btn-green">Subscribe &rarr;</button>
+                <button class=" subscribe__btn subscribe__btn-green" onclick="popup">Subscribe &rarr;</button>
               </div>
 
             </form>
@@ -236,12 +245,23 @@
           </div>
         </div>
       </div>
-      
-          
-      
-      
+       
     </section>
 
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <div class="u-center-text u-padding-top-2">
+          <i class="icon-mail-read popup__content-icon"></i>
+        </div>
+        <a href="#section-newsletter" class="popup__close">&times;</a>
+        <div class="popup__content-heading">
+          Thank you for Subscribing to our Newsletter
+        </div>
+        <div class="popup__content-text">
+          Hi user, please stay tuned to get some curated content from us which includes weekly top blogs, blogs based on your interest and the Hall of Fame.
+        </div>
+      </div>
+    </div>
 
 
 
