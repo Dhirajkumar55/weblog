@@ -33,8 +33,10 @@ h6 {
     margin: 0px;
 }
 
-.blog-posts {
-    margin-top: 40px;
+.left-menu {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 15%;
 }
 
 .blog-posts .blog-post {
@@ -42,7 +44,7 @@ h6 {
 }
 
 .blog-posts nav {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding: 0;
     /* display: flex;
     justify-content: space-around; */
@@ -55,6 +57,8 @@ h6 {
 
 .blogs-section {
     border-right: 1px solid gainsboro;
+    border-left: 1px solid gainsboro;
+    margin-top: 8%;
 }
 
 .blog-posts .blog-thumb img {
@@ -68,7 +72,7 @@ h6 {
 .blog-posts .blog-post .headline {
     clear: both;
     max-height: 35%;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .blog-posts .blog-post .headline span a {
@@ -83,10 +87,11 @@ h6 {
     color: black;
 }
 
-.blog-posts .blog-post .headline b {
+.blog-posts .blog-post .headline a b {
     width: 100%;
     font-weight: 750;
     line-height: 75%;
+    color: black;
 }
 
 .blog-posts .blog-post .down-content {
@@ -163,6 +168,12 @@ h6 {
     font-weight: bold;
     border-bottom: 1px solid #eee;
     padding-bottom: 15px;
+}
+
+.menu-right {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10%;
 }
 
 .sidebar {

@@ -76,11 +76,11 @@ app.get('/blogs/:id/edit', (req, res) => {
     const blog = blogs.find(blog => blog.id === id);
     res.render('edit', { blog });
 })
-app.get('/profile',(req,res)=>{
+app.get('/profile', (req, res) => {
     res.render('profile');
 })
-app.get('/post',(req,res)=>{
-    res.render('post',{ blogs });
+app.get('/post', (req, res) => {
+    res.render('post', { blogs });
 })
 
 app.patch('/blogs/:id', (req, res) => {
