@@ -44,6 +44,7 @@ function htmlToText(html) {
 
 
 app.get('/', (req, res) => {
+    console.log(res.body);
     res.render('homepage');
 })
 
@@ -52,11 +53,17 @@ app.get('/menu/login', (req, res) => {
 })
 
 app.get('/blogs', (req, res) => {
+
     res.render('home', { blogs });
 })
 
 app.get('/blogs/new', (req, res) => {
     res.render('newBlog');
+})
+
+app.get('/categories/:id',(req,res)=>{
+    const {id}=req.params
+    res.render('categories',{id});
 })
 
 app.post('/blogs', (req, res) => {
