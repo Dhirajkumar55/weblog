@@ -574,11 +574,13 @@ section{
   left:0rem;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 10000;
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
+  overflow:auto;
 }
 
-.popup:target{
+.popup:target,
+.popup::after{
   opacity: 1;
   visibility: visible;
 }
@@ -802,4 +804,3 @@ text-align: center;
   -webkit-background-clip: text;
   color: transparent;
 }
-
