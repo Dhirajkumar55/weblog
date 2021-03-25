@@ -4,6 +4,11 @@
   <title>Different categories</title>
 </head>
 <body>
-  <h1>id:<%= id %></h1>
+  <% for(let i=0;i<obj.length;i++){%>
+  <h1><%= obj[i].id; %></h1>
+  <h1><%= obj[i].title; %></h1>
+  <h1><%=obj[i].blog; %></h1>
+  <h1><%= obj[i].username;%></h1>
+   <% }%>
 </body>
 </html>
