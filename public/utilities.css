@@ -23,11 +23,17 @@ html{
     padding-top:2rem;
 }
 
+.u-padding-bottom-5{
+    padding-bottom:5rem;
+}
 
 .u-margin-bottom-med{
     margin-bottom: 4rem;
 }
 
+.u-margin-bottom-sm{
+    margin-bottom: 2rem;
+}
 
 
 
