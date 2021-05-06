@@ -210,3 +210,68 @@ h6 {
     color: lightseagreen;
     float: right;
 }
+
+
+.section-categories{
+    padding: 12.5rem 0;
+    background-image:linear-gradient(to right bottom,rgba(126,213,111,0.8),rgba(40,180,131,0.8)),
+      url(https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height:auto;
+  }
+  
+  .section-categories__heading{
+    margin-bottom:5rem;
+    text-align: center;
+  }
+  
+  .section-categories__heading-primary{
+    display: inline-block;
+    color: rgb(255, 255, 255) ;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+  }
+  
+  .section-categories__a{
+    text-decoration: none;
+    display: block;
+  }
+  
+  
+  
+  .categories-box{
+    background-color: rgba(255, 255, 255, 0.8) ;
+    font-size: 1.5rem;
+    padding:2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem  rgba(0, 0, 0, 0.15);
+    position: relative;
+    transition: all 0.3s;
+  }
+  
+  .categories-box:hover{
+    transform: translateY(-1.5rem) scale(1.03);
+    box-shadow: .5rem 1rem 2rem rgba(#000, 0.2);
+  }
+  
+  .categories-box:active{
+    transform: translateY(-1rem);
+  }
+  
+  .categories-box__icon{
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(to right,rgba(126,213,111,0.8),rgba(40,180,131,0.8));
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  
+  .heading-tertiary{
+    color:#777;
+    font-size: 2rem;
+  }

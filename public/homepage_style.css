@@ -223,11 +223,11 @@ h1{
     height: 6rem;
     width: 6rem;
     border-radius: 50%;
-    position: fixed;
+    position: fixed; /*for fixing the nav button on the top right*/
     top: 6.5rem;
     right: 6.5rem;
     background-image: radial-gradient(#7ed56f, #28b485);
-    z-index: 1000;
+    z-index: 1000;/*to make it look as this button is on the top of all the other elements*/
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
     @media only screen and (max-width: 56.25em) {
       .navigation__background {
@@ -246,7 +246,9 @@ h1{
     z-index: 1500;
     opacity: 0;
     width: 0;
-    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ }
+  
   
   .navigation__list {
     position: absolute;
@@ -269,14 +271,14 @@ h1{
     text-decoration: none;
     text-transform: uppercase;
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
-    background-size: 220%;
+    background-size: 220%;/*due to this the whole white background shifts right*/
     transition: all .4s; }
     .navigation__link:link span, .navigation__link:visited span {
       margin-right: 1.5rem;
       display: inline-block; }
   
   .navigation__link:hover, .navigation__link:active {
-    background-position: 100%;
+    background-position: 100%;/*due to this the whole white background shifts left and fills the hovered list item*/
     color: #55c57a;
     transform: translateX(1rem); }
   
@@ -363,12 +365,12 @@ section{
   background-size: cover;
   position: relative;
   height:auto;
-  transform: skewY(-7deg);
+  transform: skewY(-6deg);
   margin-top: -9rem;
 }
 
 .section-categories > *{
-  transform: skewY(7deg);
+  transform: skewY(6deg);
 }
 
 .section-categories__heading{

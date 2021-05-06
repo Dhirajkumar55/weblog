@@ -90,8 +90,16 @@ app.get('/blogs', (req, res) => {
     res.render('home', { blogs });
 })
 
+app.get('/writeblog', (req,res) => {
+    res.render('editor');
+})
+
 app.get('/blogs/new', (req, res) => {
     res.render('newBlog');
+})
+
+app.get('/AboutUs',(req, res) => {
+    res.render('AboutUS');
 })
 const categories={
     Travel : [],
@@ -124,6 +132,8 @@ app.post('/blogs', (req, res) => {
     blogs.push({ username, blog, dur, title, id: uuid() });
     res.redirect('/blogs');
 })
+
+
 
 app.get('/blogs/:id', (req, res) => {
     const { id } = req.params;
