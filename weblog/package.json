@@ -1,0 +1,36 @@
+{
+    "name": "projects",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@editorjs/editorjs": "^2.21.0",
+        "@editorjs/header": "^2.6.1",
+        "chance": "^1.1.7",
+        "cloudinary": "^1.25.1",
+        "connect-flash": "^0.1.1",
+        "dotenv": "^8.2.0",
+        "editorjs-html": "^3.0.5",
+        "ejs": "^3.1.6",
+        "ejs-mate": "^3.0.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "joi": "^17.4.0",
+        "js-alert": "^1.0.4",
+        "method-override": "^3.0.0",
+        "mongoose": "^5.12.5",
+        "multer": "^1.4.2",
+        "multer-storage-cloudinary": "^4.0.0",
+        "nodemon": "^2.0.7",
+        "passport": "^0.4.1",
+        "passport-local": "^1.0.0",
+        "passport-local-mongoose": "^6.1.0",
+        "uuid": "^8.3.2"
+    }
+}

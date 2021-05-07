@@ -1,0 +1,26 @@
+.fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: lightcoral;
+  box-shadow: 1px 2px 4px grey;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab:hover {
+  cursor: pointer;
+}
+
+.fab img {
+  width: 45%;
+  /*transform: rotate(45deg);*/
+  transition: 0.4s;
+}
+
