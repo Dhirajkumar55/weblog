@@ -1,0 +1,259 @@
+ ::selection {
+    background-color: rgb(149, 190, 149);
+    color: white;
+}
+
+header {
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(149, 190, 149)!important;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+header .navbar {
+    padding: 25px 0px;
+}
+
+.navbar .navbar-brand {
+    float: left;
+    margin-top: -12px;
+    outline: none;
+}
+
+.navbar .navbar-brand h2 {
+    color: #1e1e1e;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 900;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+
+.navbar .navbar-brand h2 em {
+    font-size: 44px;
+    font-style: normal;
+    color: rgb(29, 143, 29);
+}
+
+#navbarResponsive {
+    z-index: 999;
+}
+
+.navbar-collapse {
+    text-align: center;
+}
+
+.navbar .navbar-nav .nav-item {
+    margin: 0px 15px;
+}
+
+.navbar .navbar-nav a.nav-link {
+    text-transform: capitalize;
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1e1e1e;
+    transition: all 0.3s;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .active>.nav-link,
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link.show,
+.navbar .navbar-nav .show>.nav-link {
+    color: rgb(11, 151, 11);
+}
+
+.navbar .navbar-toggler-icon {
+    background-image: none;
+}
+
+.navbar .navbar-toggler {
+    border-color: rgb(238, 248, 238);
+    background-color: rgb(29, 143, 29);
+    height: 46px;
+    outline: none;
+    border-radius: 0px;
+    position: absolute;
+    right: 30px;
+    top: 25px;
+}
+
+.navbar .navbar-toggler-icon:after {
+    content: '\f0c9';
+    color: rgb(238, 248, 238);
+    font-size: 18px;
+    line-height: 30px;
+    font-family: 'FontAwesome';
+}
+
+.blog-posts .sidebar-heading h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #20232e;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.blog-posts .comments {
+    margin-top: 30px;
+}
+
+.blog-posts .comments ul li {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-posts .comments ul li.replied {
+    padding-left: 130px;
+}
+
+.blog-posts .comments ul li:last-child {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
+.blog-posts .comments ul li .author-thumb {
+    display: inline;
+    float: left;
+}
+
+.blog-posts .comments ul li .author-thumb img {
+    max-width: 75px;
+    display: inline;
+}
+
+.blog-posts .comments ul li .right-content {
+    margin-left: 90px;
+}
+
+.blog-posts .comments ul li .right-content h4 {
+    color: #20232e;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.blog-posts .comments ul li .right-content h4 span {
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    margin-left: 20px;
+}
+
+.blog-posts .submit-comment {
+    margin-top: 60px;
+}
+
+.blog-posts .submit-comment input {
+    width: 100%;
+    height: 46px;
+    border: 1px solid #eee;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #7a7a7a;
+    outline: none;
+    padding: 0px 15px;
+    margin-bottom: 30px;
+}
+
+.blog-posts .submit-comment textarea {
+    width: 100%;
+    height: 46px;
+    border: 1px solid #eee;
+    font-size: 13px;
+    font-weight: 500;
+    color: #7a7a7a;
+    outline: none;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+    height: 180px;
+    max-height: 220px;
+    max-width: 100%;
+    min-width: 160px;
+}
+
+.blog-posts .submit-comment input::placeholder,
+.blog-posts .submit-comment textarea::placeholder {
+    color: #aaa;
+}
+
+.blog-posts .submit-comment button {
+    display: inline-block;
+    background-color: rgb(32, 179, 32);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    transition: all .3s;
+    border: none;
+    outline: none;
+}
+
+.blog-posts .submit-comment button:hover {
+    background-color: rgb(137, 219, 137);
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-brand {
+        position: absolute;
+        left: 30px;
+        top: 25px;
+    }
+    .background-header .navbar-brand,
+    .background-header .navbar-toggler {
+        top: 15px;
+    }
+    .navbar .navbar-brand {
+        width: auto;
+    }
+    .navbar:after {
+        display: none;
+    }
+    #navbarResponsive {
+        z-index: 99999;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background-color: rgb(227, 245, 227);
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+    .navbar .navbar-nav .nav-item {
+        border-bottom: 1px solid #eee;
+    }
+    .navbar .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+    .navbar .navbar-nav a.nav-link {
+        padding: 15px 0px;
+        color: #1e1e1e!important;
+    }
+    .navbar .navbar-nav .nav-link:hover,
+    .navbar .navbar-nav .active>.nav-link,
+    .navbar .navbar-nav .nav-link.active,
+    .navbar .navbar-nav .nav-link.show,
+    .navbar .navbar-nav .show>.nav-link {
+        color: rgb(22, 121, 22)!important;
+        border-bottom: none!important;
+        padding-bottom: 15px;
+    }
+}

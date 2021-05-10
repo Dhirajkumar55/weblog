@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= blog.title %>
+    </title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/post.css">
+    <style>
+        a {
+            text-decoration: none!important;
+            color: rgb(87, 85, 85);
+        }
+        
+        a:hover {
+            color: black;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="/css/tempp.css"> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="shortcut icon" type="image/png" href="/images/weBlog_logo1.png" />
+</head>
+
+<body>
+    <header class="">
+        <nav class="navbar fixed-top navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <h2>weBlog<em>.</em> </h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/blogs">Explore
+                    <span class="sr-only">(current)</span>
+                  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#categories">Categories</a>
+                        </li>
+                        <% if(currentUser){ %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users/<%=currentUser._id%>/dashboard">My Dashboard</a>
+                            </li>
+                            <% } else{ %>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/register">Register</a>
+                                </li>
+                                <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <input type="hidden" name="hidden" id="hiddeninput" value="<%= blog.body%>">
+
+
+    <div class="container-fluid" style="padding-top: 6%;">
+        <div class="row">
+            <div class="col-1">
+                <% if(currentUser) {%>
+                    <div style="margin-top: 12rem; position: fixed;">
+                        <form action="/user/<%= currentUser._id%>/favourites/<%=blog._id%>" method="POST">
+                            <button class="btn btn-success">Add to Favourites</button>
+                        </form>
+                    </div>
+                    <% } %>
+                        <div class="row" style="margin-top: 15rem;position: fixed;padding-left: 2rem;">
+                            <div class="col"><i class="far fa-thumbs-up"></i></div>
+                            <div class="col" style=" padding-top: 0.15rem;">
+                                <h6 style="padding: 0rem;">
+                                    <%= blog.likes.length %>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 17rem;position: fixed;padding-left: 2rem;">
+                            <div class="col"><i class="far fa-comment"></i></div>
+                            <div class="col" style="padding-top: 0.15rem;">
+                                <h6 style="padding: 0rem;">
+                                    <%=blog.comments.length %>
+                                </h6>
+                            </div>
+                        </div>
+            </div>
+            <div class="container" style="margin-left: 50px; background-image: linear-gradient(to right, rgba(240, 252, 238, 0.938), rgb(246, 248, 247));">
+                <h1 class="text-center" style="padding-top: 2%;">
+                    <b> <%= blog.title %> </b>
+                </h1>
+                <div class="row">
+                    <img class="img-fluid" style="height: 4rem;padding:0 1rem;margin-bottom: 1px; border-radius: 100%;" src="<%=blog.author.profilepic.url %>">
+                    <h5 style="margin-bottom: 1px;">
+                        <% if(currentUser && blog.author.equals(currentUser._id)) {%>
+                            <a href="/users/<%= blog.author._id %>/profile">
+                                <%= blog.author.username %>
+                            </a>
+                            <% } else {  %>
+                                <a href="/users/<%= blog.author._id %>/profilenl">
+                                    <%= blog.author.username %>
+                                </a>
+                                <% } %>
+                    </h5>
+                </div>
+                <img style="max-height: 25%;max-width: 30%; display: block; margin: 20px auto;" class="center rounded img-thumbnail" src="<%=blog.image.url %>">
+                <div class="col blogbody" style="padding-left: 100px;padding-right: 100px; padding-top: 25px;">
+                    <p style="padding-bottom: 0.5rem; letter-spacing: 0.5px;font-weight: 400;line-height: 25px;border-bottom: 0.1rem solid rgba(0,0,0,0.1)">
+
+                    </p>
+                </div>
+                <div style="padding-bottom: 1rem; margin-top: 0rem;" class="row container">
+                    <div class="col-0">
+                        <form type="hidden" action="/blogs/<%=blog._id%>/upvotes" method="post"><button style="border: none;outline:none;color:black;background-color: white;"><i id='like' class="far fa-thumbs-up fa-lg"></i></button></form>
+                    </div>
+
+
+
+                    <div class="col-0"><b><%=blog.likes.length%></b></div>
+
+
+
+                    <div class="col-0" style="margin-left: 0.5rem;"><button style="border: none;outline:none;color:black;background-color: white;"><i class="far fa-comment fa-lg"></i></button></div>
+                    <div class="col-0"><button style="border: none;outline:none;color:black;background-color: white;"><b> <%=blog.comments.length %> </b></button></div>
+
+                    <div style="margin-left: 1rem;" class="col-0">
+                        <button style="outline: none;border:none;color:black;background-color: white;" type="button" data-target="#exampleModalLong" data-toggle="modal"><i class="fa fa-share-alt" aria-hidden="true"></i> share
+          </button>
+                    </div>
+                    <div class="col-0"><i style="margin-left: 30rem;" class="fab fa-twitter"></i></div>
+                    <div class="col-0"><i style="margin-left: 1rem;" class="fab fa-linkedin"></i></div>
+                    <div class="col-0"><i style="margin-left: 1rem;" class="fab fa-facebook-square"></i></div>
+                    <div class="col-0"><i style="margin-left: 1rem;" class="far fa-bookmark"></i></div>
+                </div>
+                <div class="container blog-posts">
+                    <div class="col-lg-12">
+                        <div>
+                            <% if(currentUser && blog.author.equals(currentUser._id)) {%>
+                                <form class="d-inline" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-danger">
+                                    DELETE THE BLOG
+                                </button>
+                                </form>
+                                <% } %>
+                        </div>
+                        <div class="sidebar-item comments">
+                            <div class="sidebar-heading">
+                                <h2>
+                                    <%= blog.comments.length%> comments</h2>
+                            </div>
+                            <div class="content">
+                                <% for(let comment of blog.comments) {%>
+                                    <ul>
+                                        <li>
+                                            <div class="author-thumb">
+                                                <img src="<%= comment.author.profilepic.url%>" alt="">
+                                            </div>
+                                            <div class="right-content">
+                                                <h4>
+                                                    <%= comment.author.username %> <span>May 16, 2020</span></h4>
+                                                <p>
+                                                    <%= comment.body %>
+                                                </p>
+                                                <% if(currentUser && comment.author.equals(currentUser._id)) {%>
+                                                    <form action="/blogs/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </form>
+                                                    <% }%>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <% if(currentUser){ %>
+                            <div class="sidebar-item submit-comment">
+                                <div class="sidebar-heading">
+                                    <h2>Your comment</h2>
+                                </div>
+                                <div class="content">
+                                    <form id="comment" action="/blogs/<%=blog._id%>/comments" method="post">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <fieldset>
+                                                    <textarea name="comment[body]" rows="6" id="message" placeholder="Type your comment" required=""></textarea>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-12" style="padding-bottom: 2%;">
+                                                <fieldset>
+                                                    <button type="submit" id="form-submit" class="main-button">Submit</button>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Share</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-0">
+                            <div class="row"><i style="margin-left: 2.5rem;" class="fab fa-facebook fa-3x"></i></div>
+                            <div class="row">
+                                <p style="margin-left: 1.9rem;">Facebook</p>
+                            </div>
+                        </div>
+                        <div class="col-0">
+                            <div class="row"><i style="margin-left: 3.5rem;" class="fab fa-twitter fa-3x"></i></div>
+                            <div class="row">
+                                <p style="margin-left: 3rem;">Twitter</p>
+                            </div>
+                        </div>
+                        <div class="col-0">
+                            <div class="row"><i style="margin-left: 3.5rem;" class="fab fa-instagram fa-3x"></i></div>
+                            <div class="row">
+                                <p style="margin-left: 3rem;">instagram</p>
+                            </div>
+                        </div>
+                        <div class="col-0">
+                            <div class="row"><i style="margin-left: 3.5rem;" class="far fa-envelope fa-3x"></i></div>
+                            <div class="row">
+                                <p style="margin-left: 3.75rem;">Email</p>
+                            </div>
+                        </div>
+                        <div class="col-0">
+                            <div class="row"><i style="margin-left: 3.5rem;" class="fab fa-linkedin fa-3x"></i></div>
+                            <div class="row">
+                                <p style="margin-left: 3rem;">Linkedin</p>
+                            </div>
+                        </div>
+                        <div class="col-0">
+                            <div class="row"><i style="margin-left: 3.5rem;" class="fab fa-reddit fa-3x"></i></div>
+                            <div class="row">
+                                <p style="margin-left: 3.5rem;">Reddit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h6 style="margin-top: 0.5rem; margin-left: 0.5rem;">Link:</h6>
+                        <a style="padding-top: 0.3rem;padding-left: 0.5rem" href="/blogs/<%= blog._id%>">http://localhost:8080/blogs/<%=blog._id%></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer bg-dark py-3 mt-auto">
+        <div class="container">
+            <span class="text-muted">
+                &copy; weBlog 2021
+            </span>
+        </div>
+    </footer>
+    <script src="/javascripts/tempor.js"></script>
+</body>
+
+</html>

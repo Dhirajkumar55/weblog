@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write New Blog</title>
+    <link rel="stylesheet" href="/css/newblog.css" type="text/css">
+    <link rel="stylesheet" href="/css/tempp.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script>
+    <link rel="shortcut icon" type="image/png" href="/images/weBlog_logo1.png" />
+</head>
+
+<body>
+    <header class="">
+        <nav class="navbar fixed-top navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <h2>weBlog<em>.</em> </h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/blogs">Explore
+                <span class="sr-only">(current)</span>
+              </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#categories">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/<%=currentUser._id%>/dashboard">My Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="padding-top: 8%;">
+        <form action="/blogs" method="POST" enctype="multipart/form-data" novalidate class="needs-validation">
+            <section class="mb-2">
+                <label for="title" class="form-label"> <b> Enter the title of your blog </b></label>
+                <input type="text" name="blog[title]" id="title" class="form-control" required>
+            </section>
+            <b>Enter the details of your blog</b>
+            <p><b>A kind advice <a href="https://bestofjs.org/projects/editorjs">Kindly follow the above procedure if you don't know how to write a blog</a> </b> You can upload anything inside the details of our blog. But please make sure, you upload the
+                image in the section asked below(marked as necessary).
+
+            </p>
+            <div id="editorjs" style="border: 1px solid black; margin: 10px 0; border-radius: 10px; padding: 10px 0;">
+
+            </div>
+            <button type="button" id="savebtn" class="btn btn-info mb-2">Add Blog</button>
+            <section class="mb-2">
+                <b>Select Categories that suit your blog</b>
+                <div class="form-check">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox1" value="Travel" />
+                                <label for="checkbox1" class="css-label lite-green-check form-check-label">Travel</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox2" value="Gaming" />
+                                <label for="checkbox2" class="css-label lite-green-check form-check-label">Gaming</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox3" value="Technology" />
+                                <label for="checkbox3" class="css-label lite-green-check form-check-label">Technology</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox4" value="Food" />
+                                <label for="checkbox4" class="css-label lite-green-check form-check-label">Food</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox5" value="Literature" />
+                                <label for="checkbox5" class="css-label lite-green-check form-check-label">Literature</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox6" value="Arts" />
+                                <label for="checkbox6" class="css-label lite-green-check form-check-label">Arts</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox7" value="Education" />
+                                <label for="checkbox7" class="css-label lite-green-check form-check-label">Education</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox8" value="Social" />
+                                <label for="checkbox8" class="css-label lite-green-check form-check-label">Social</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox9" value="Business" />
+                                <label for="checkbox9" class="css-label lite-green-check form-check-label">Business</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="Category" class="css-checkbox form-check-input" id="checkbox10" value="Health" />
+                                <label for="checkbox10" class="css-label lite-green-check form-check-label">Health</label>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </section>
+            <section class="mb-2">
+                <label for="duration" class="form-label"> <b>Enter the estimated duration</b> </label>
+                <input type="number" name="blog[duration]" id="duration" class="form-control" required>
+            </section>
+            <section class="mb-2">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="image">
+                        <label class="custom-file-label" for="inputGroupFile01">Upload your primary image for the blog(necessary)</label>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <input type="hidden" name="blogbody" value="hey there" id="hiddeninput">
+            </section>
+            <button class="btn btn-success mb-2">Submit the blog</button>
+        </form>
+    </div>
+    <a href="/blogs">Enter home page</a>
+    <footer class="footer bg-dark py-3 mt-auto">
+        <div class="container">
+            <span class="text-muted">
+                &copy; weBlog 2021
+            </span>
+        </div>
+    </footer>
+    <script src="/javascripts/editortext.js"></script>
+</body>
+
+</html>
